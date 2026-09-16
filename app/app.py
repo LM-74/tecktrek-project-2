@@ -239,10 +239,19 @@ def tab_batch(predictor, threshold):
 # ---------------------------------------------------------------
 def _show_csv(filename: str, caption: str):
     path = REPORTS_DIR / filename
+
     if not path.exists():
+        st.warning(f"Results file not found: `{path}`")
         return
+
+    try:
+        df = pd.read_csv(path)
+    except Exception as exc:
+        st.error(f"Could not read `{filename}`: {exc}")
+        return
+
     st.markdown(f"**{caption}**")
-    st.dataframe(pd.read_csv(path), width="stretch", hide_index=True)
+    st.dataframe(df, width="stretch", hide_index=True)
 
 
 def tab_results():
@@ -258,6 +267,15 @@ def tab_results():
     for col, img, cap in [
         (c1, "mlp_training_curves.png", "MLP training curves"),
         (c2, "mlp_confusion_matrix.png", "MLP confusion matrix"),
+    ]:
+        path = REPORTS_DIR / img
+        if path.exists():
+            col.image(str(path), caption=cap, width="stretch")
+    
+    s1, s2 = st.columns(2)
+    for col, img, cap in [
+        (s1, "autoencoder_training_curve.png", "Autoencoder training curves"),
+        (s2, "autoencoder_reconstruction_errors.png", "Autoencoder reconstruction errors"),
     ]:
         path = REPORTS_DIR / img
         if path.exists():
