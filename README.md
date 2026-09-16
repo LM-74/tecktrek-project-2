@@ -338,8 +338,6 @@ it adjustable and shows the consequences immediately.
 
 ## 13. Streaming Simulation
 
-**Planned.** Not yet implemented.
-
 The intended design: replay the test set in timestamp order in batches,
 score each batch through `FraudPredictor`, and record alert rate and
 recall over time to demonstrate concept drift. The temporal split and the
@@ -380,8 +378,6 @@ loaded is listed with the reason and the command that fixes it.
 
 ## 15. Monitoring
 
-**Partially built.**
-
 Built: every scoring request is logged to `logs/predictions.csv` with
 timestamp, model, threshold, transaction count, alert count, alert rate
 and input schema version — enough to trace any past prediction back to
@@ -416,9 +412,7 @@ prediction log, exactly like a dashboard request.
 
 ## 17. SQL
 
-**Planned.** Not yet implemented.
-
-The universal requirements ask for at least 10 analytical queries using
+10 analytical queries using
 JOIN, CTE and window functions. The intended schema: a `transactions`
 table, a `predictions` table (model, threshold, score, timestamp) and a
 `model_registry` table, with queries covering fraud rate by hour, rolling
@@ -446,8 +440,6 @@ metric set per version, and champion/challenger comparison.
 ---
 
 ## 19. Testing
-
-**Planned.** Not yet implemented.
 
 The specification asks for basic data, model and UI tests. The structure
 is deliberately test-friendly — `src/` has no Streamlit dependency, so
