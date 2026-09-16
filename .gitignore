@@ -1,32 +1,75 @@
-data/processed/model_test.csv
-data/processed/model_val.csv
-data/processed/model_train.csv
-data/processed/train.csv
-data/processed/val.csv
-data/processed/test.csv
-data/raw/creditcard.csv
+# ---------------------------------------------------------------
+# Data
+#
+# The dataset is ~150 MB and redistributing it would breach Kaggle's
+# terms. Regenerate the processed splits by running notebooks 01 and 02.
+# ---------------------------------------------------------------
+data/raw/*
+data/processed/*
+data/interim/*
+!data/**/.gitkeep
+!data/**/README.md
+*.csv.gz
+*.zip
+
+# Keep the small saved result tables in reports/, but not scored output
+reports/scored_*.csv
+
+# ---------------------------------------------------------------
+# Runtime output
+# ---------------------------------------------------------------
+logs/
+*.log
+mlruns/
+
+# ---------------------------------------------------------------
+# Secrets — never commit API keys or credentials
+# ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+secrets.toml
+.streamlit/secrets.toml
+
+# ---------------------------------------------------------------
 # Python
+# ---------------------------------------------------------------
 __pycache__/
 *.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
 
 # Virtual environments
 .venv/
 venv/
 env/
+ENV/
 
-# IDE
-.vscode/
+# Testing / linting caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Dataset and generated data
-/data/
-
-# Jupyter
+# ---------------------------------------------------------------
+# Notebooks
+# ---------------------------------------------------------------
 .ipynb_checkpoints/
+*-checkpoint.ipynb
 
-# Generated prediction files
-notebooks/model_predictions.csv
+# ---------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

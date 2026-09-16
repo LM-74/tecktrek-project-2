@@ -1,0 +1,12 @@
+timestamp,model,threshold,source,n_transactions,n_alerts,alert_rate,input_schema_version
+2026-09-16T14:07:13+00:00,Logistic Regression,0.5,single,1,0,0.0,36-features-v1
+2026-09-16T14:07:25+00:00,Logistic Regression,0.5,single,1,1,1.0,36-features-v1
+2026-09-16T14:07:38+00:00,Logistic Regression,0.5,single,1,1,1.0,36-features-v1
+2026-09-16T14:07:43+00:00,Logistic Regression,0.5,single,1,0,0.0,36-features-v1
+2026-09-16T14:07:51+00:00,Logistic Regression,0.5,single,1,1,1.0,36-features-v1
+2026-09-16T14:07:58+00:00,Random Forest,0.5,single,1,0,0.0,36-features-v1
+2026-09-16T16:58:31+00:00,XGBoost (tuned),0.5,single,1,0,0.0,36-features-v1
+2026-09-16T16:59:25+00:00,Logistic Regression,0.5,batch,5000,44,0.0088,36-features-v1
+2026-09-16T17:46:04+00:00,MLP (deep learning),0.986492,single,1,0,0.0,36-features-v1
+2026-09-16T17:46:16+00:00,Autoencoder (anomaly),7.586084,single,1,0,0.0,36-features-v1
+2026-09-16T17:53:57+00:00,Autoencoder (anomaly),7.586084,single,1,0,0.0,36-features-v1
